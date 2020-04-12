@@ -1,4 +1,4 @@
-package main.java.com.demogorgen;
+package com.demogorgen;
 
 /**
  * @author lzr
