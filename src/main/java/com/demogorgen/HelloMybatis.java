@@ -27,6 +27,9 @@ public class HelloMybatis {
         //生产sqlsession
         SqlSession session = ssf.openSession();
         //操作数据库
+        User user=session.selectOne("UserMapper.SelectUserByID",1);
+        System.out.println(user.getUsername());
+
     }
 
 }
