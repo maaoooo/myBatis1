@@ -6,6 +6,12 @@
     <select id="SelectUserByID" parameterType="Integer" resultType="com.demogorgen.User">
         select * from user where id=#{id}
     </select>
+    <select id="SelectAllUser" resultType="com.demogorgen.User">
+        select * from user
+    </select>
+    <select id="SelectAllLike" resultType="com.demogorgen.User">
+        select * from user where username like '%${value}%'
+    </select>
 </mapper>
 
 
