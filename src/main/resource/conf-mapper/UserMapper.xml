@@ -9,9 +9,12 @@
     <select id="SelectAllUser" resultType="com.demogorgen.User">
         select * from user
     </select>
-    <select id="SelectAllLike" resultType="com.demogorgen.User">
-        select * from user where username like '%${value}%'
+    <select id="SelectAllLike" parameterType="String" resultType="com.demogorgen.User">
+        select * from user where username like "%"#{name}"%"
     </select>
+    <insert id="InsertUser" parameterType="com.demogorgen.User">
+        insert into user(username,password) value (#{username},#{password});
+    </insert>
 </mapper>
 
 

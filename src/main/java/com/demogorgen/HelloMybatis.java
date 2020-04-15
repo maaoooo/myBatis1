@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class HelloMybatis {
     public static void main(String[] args) throws IOException {
-        test3();
+        test4();
     }
     public static void test() throws IOException {
         //读取配置文件
@@ -57,10 +57,27 @@ public class HelloMybatis {
         //生产sqlsession
         SqlSession session = ssf.openSession();
         //操作数据库
-        List<User> userList=session.selectList("UserMapper.SelectAllLike","刘");
+        List<User> userList=session.selectList("UserMapper.SelectAllLike","祈求");
         for(User u:userList){
             System.out.println(u);
         }
     }
+    public static void test4() throws IOException {
+        //读取配置文件
+        InputStream in = HelloMybatis.class.getClassLoader().getResourceAsStream("conf/sqlMapConfig.xml");
+        //需要sqlsessionFactoryBulider
+        SqlSessionFactoryBuilder ssfb = new SqlSessionFactoryBuilder();
+        //创建sqlsessionfactory
+        SqlSessionFactory ssf = ssfb.build(in);
+        //生产sqlsession
+        SqlSession session = ssf.openSession();
+        //操作数据库
+        User user=new User();
+        user.setPassword("123");
+        user.setUsername("憨憨科长");
+        session.insert("UserMapper.InsertUser",user);
+        session.commit();
+    }
+
 
 }
