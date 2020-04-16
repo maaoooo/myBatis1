@@ -6,15 +6,27 @@
     <select id="SelectUserByID" parameterType="Integer" resultType="com.demogorgen.User">
         select * from user where id=#{id}
     </select>
+
     <select id="SelectAllUser" resultType="com.demogorgen.User">
         select * from user
     </select>
+
     <select id="SelectAllLike" parameterType="String" resultType="com.demogorgen.User">
         select * from user where username like "%"#{name}"%"
     </select>
+
     <insert id="InsertUser" parameterType="com.demogorgen.User">
         insert into user(username,password) value (#{username},#{password});
     </insert>
+
+    <update id="updataName" parameterType="com.demogorgen.User">
+        update user set username=#{username} where id=#{id}
+    </update>
+
+    <delete id="DelectByID" parameterType="Integer">
+        delete from user where id=#{id}
+    </delete>
+
 </mapper>
 
 
