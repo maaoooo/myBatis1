@@ -17,8 +17,8 @@ import java.util.List;
  */
 public class HelloMybatis {
     public static void main(String[] args) throws IOException {
-        test();
-        test6();
+        test2();
+//        test();
     }
     public static void test() throws IOException {
         //读取配置文件
@@ -45,7 +45,8 @@ public class HelloMybatis {
         //操作数据库
         List<User> userList=session.selectList("UserMapper.SelectAllUser");
         for(User u:userList){
-            System.out.println(u);
+//            System.out.println(u);
+            System.out.println("这位员工名字叫："+u.getUsername()+"密码是："+u.getPassword());
         }
     }
     public static void test3() throws IOException {
@@ -75,7 +76,7 @@ public class HelloMybatis {
         //操作数据库
         User user=new User();
         user.setPassword("123");
-        user.setUsername("憨憨科长");
+        user.setUsername("Aran");
         session.insert("UserMapper.InsertUser",user);
         session.commit();
     }

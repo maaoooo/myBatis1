@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author lzr
@@ -22,7 +24,11 @@ public class UserDaoTest {
         //创建sqlsessionfactory
         SqlSessionFactory ssf = ssfb.build(in);
         UserDao userDao=new UserDaoimpl(ssf);
-        User user=userDao.getUserByID(2);
+        User user=userDao.getUserByID(5);
         System.out.println(user);
+        List<User> userList=userDao.SelectAllUser();
+        for(User u:userList){
+            System.out.println(u);
+        }
     }
 }
