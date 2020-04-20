@@ -1,6 +1,6 @@
 package com.demogorgen.dao;
 
-import com.demogorgen.User;
+import com.demogorgen.bean.User;
 
 import java.util.List;
 

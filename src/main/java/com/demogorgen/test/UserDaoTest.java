@@ -1,13 +1,12 @@
 package com.demogorgen.test;
 
-import com.demogorgen.User;
+import com.demogorgen.bean.User;
 import com.demogorgen.dao.UserDao;
 import com.demogorgen.dao.UserDaoimpl;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

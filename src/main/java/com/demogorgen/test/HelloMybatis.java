@@ -1,6 +1,6 @@
 package com.demogorgen.test;
 
-import com.demogorgen.User;
+import com.demogorgen.bean.User;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;

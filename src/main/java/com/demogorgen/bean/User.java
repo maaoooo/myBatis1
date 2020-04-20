@@ -1,4 +1,4 @@
-package com.demogorgen;
+package com.demogorgen.bean;
 
 /**
  * @author lzr

@@ -1,6 +1,6 @@
 package com.demogorgen.test;
 
-import com.demogorgen.User;
+import com.demogorgen.bean.User;
 import com.demogorgen.mapper.UserMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -14,7 +14,7 @@ import java.util.List;
  * @date 2020/4/17 10:55:35
  * @description
  */
-public class MapperTest {
+public class   MapperTest {
     public static void main(String[] args) {
         MapperTest mapperTest=new MapperTest();
         mapperTest.Test3();
