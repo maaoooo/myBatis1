@@ -9,6 +9,13 @@
     <select id="SelectAllCountry" resultMap="country">
         select * from country
     </select>
+    <!--查询所有包装类-->
+    <resultMap id="UserVo" type="uservolist">
+        <id property="id" column="id"/>
+    </resultMap>
+    <select id="Select" resultMap="uservolist">
+        select * from user u right join country c on u.id=c.id
+    </select>
 </mapper>
 
 

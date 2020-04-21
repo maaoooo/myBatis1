@@ -5,18 +5,23 @@ package com.demogorgen.bean;
  * @date 2020/4/21 14:26:48
  * @description
  */
-public class UserVo {
-    //包装类
+public class UserVo extends User{
+    private Country country;
 
-    //需要全部的User信息
-    private User user;
+    public Country getCountry() {
+        return country;
+    }
 
-    public User getUser(){
-        return user;
+    public void setCountry(Country country) {
+        this.country = country;
     }
-    public  void setUser(User user){
-        this.user=user;
+
+    @Override
+    public String toString() {
+        return "UserVo{" +
+                "country=" + country +
+                "} " + super.toString();
     }
-    //需要表B的id name属性
+
 
 }

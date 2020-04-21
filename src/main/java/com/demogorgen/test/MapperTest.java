@@ -69,25 +69,25 @@ public class   MapperTest {
             System.out.println(u);
         }
     }
-    public void Test4(){
-        //读取配置文件
-        InputStream in = HelloMybatis.class.getClassLoader().getResourceAsStream("conf/sqlMapConfig.xml");
-        //需要sqlsessionFactoryBulider
-        SqlSessionFactoryBuilder ssfb = new SqlSessionFactoryBuilder();
-        //创建sqlsessionfactory
-        SqlSessionFactory ssf = ssfb.build(in);
-        //生产sqlsession
-        SqlSession session = ssf.openSession();
-        //操作数据库
-        UserVo userVo=new UserVo();
-        User user=new User();
-        user.setId(1);
-        userVo.setUser(user);
-        UserMapper mapper=session.getMapper(UserMapper.class);
-        UserMapper userMapper=session.getMapper(UserMapper.class);
-        User returnUser=userMapper.SelectUserByUserVoId(userVo);
-        System.out.println(returnUser);
-    }
+//    public void Test4(){
+//        //读取配置文件
+//        InputStream in = HelloMybatis.class.getClassLoader().getResourceAsStream("conf/sqlMapConfig.xml");
+//        //需要sqlsessionFactoryBulider
+//        SqlSessionFactoryBuilder ssfb = new SqlSessionFactoryBuilder();
+//        //创建sqlsessionfactory
+//        SqlSessionFactory ssf = ssfb.build(in);
+//        //生产sqlsession
+//        SqlSession session = ssf.openSession();
+//        //操作数据库
+//        UserVo userVo=new UserVo();
+//        User user=new User();
+//        user.setId(1);
+//        userVo.setUser(user);
+//        UserMapper mapper=session.getMapper(UserMapper.class);
+//        UserMapper userMapper=session.getMapper(UserMapper.class);
+//        User returnUser=userMapper.SelectUserByUserVoId(userVo);
+//        System.out.println(returnUser);
+//    }
     public void Test5(){
         //读取配置文件
         InputStream in = HelloMybatis.class.getClassLoader().getResourceAsStream("conf/sqlMapConfig.xml");
