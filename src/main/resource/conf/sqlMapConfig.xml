@@ -27,7 +27,7 @@
 
     <mappers>
 <!--        <mapper resource="conf-mapper/UserMapper.xml"/>-->
-        <package name=""/>
+        <package name="com.demogorgen.mapper"/>
     </mappers>
     
 </configuration>
