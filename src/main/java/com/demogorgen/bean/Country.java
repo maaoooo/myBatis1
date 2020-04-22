@@ -17,6 +17,9 @@ public class Country {
         this.id = id;
     }
 
+    public Country() {
+    }
+
     @Override
     public String toString() {
         return "Country{" +

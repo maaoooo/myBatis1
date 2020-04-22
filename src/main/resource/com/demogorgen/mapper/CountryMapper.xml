@@ -9,12 +9,18 @@
     <select id="SelectAllCountry" resultMap="country">
         select * from country
     </select>
-    <!--查询所有包装类-->
-    <resultMap id="UserVo" type="uservolist">
+
+    <!-- List<CountryVo> SelectAllCountryVo();-->
+    <resultMap id="countryVolist" type="CountryVo">
         <id property="id" column="id"/>
+        <id property="countryName" column="c_name"/>
+        <collection property="userList" ofType="User">
+            <id property="username" column="username"/>
+            <id property="country" column="country"/>
+        </collection>
     </resultMap>
-    <select id="Select" resultMap="uservolist">
-        select * from user u right join country c on u.id=c.id
+    <select id="SelectAllCountryVo" resultMap="countryVolist">
+        select u.username,u.country,c.c_name from country c left join user u on u.country=c.c_name
     </select>
 </mapper>
 

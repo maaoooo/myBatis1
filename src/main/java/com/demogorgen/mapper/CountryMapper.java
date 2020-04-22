@@ -1,6 +1,7 @@
 package com.demogorgen.mapper;
 
 import com.demogorgen.bean.Country;
+import com.demogorgen.bean.CountryVo;
 import com.demogorgen.bean.UserVo;
 
 import java.util.List;
@@ -11,6 +12,5 @@ import java.util.List;
  * @description
  */
 public interface CountryMapper {
-    public List<Country> SelectAllCountry();
-    public List<UserVo> Select();
+    List<CountryVo> SelectAllCountryVo();
 }

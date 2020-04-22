@@ -24,4 +24,6 @@ public interface UserMapper {
     public List<User> SelectAllLike(String name);
     public  User SelectUserByUserVoId(UserVo vo);
     public  int SelectUserCount();
+    //查询所有UserVo
+    public  List<UserVo> SelectAllUserVo();
 }

@@ -9,9 +9,18 @@ public class User {
     private int id;
     private String username;
     private String password;
+    private String country;
 
     public int getId() {
         return id;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public void setId(int id) {
@@ -40,6 +49,7 @@ public class User {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", country='" + country + '\'' +
                 '}';
     }
 

@@ -7,7 +7,7 @@
         select * from user where id=#{id}
     </select>
 
-    <select id="SelectAllUser" resultType="com.demogorgen.bean.User">
+    <select id="SelectAllUser" resultType="User">
         select * from user
     </select>
 
@@ -35,6 +35,17 @@
         select Count(*) from user
     </select>
 
+    <resultMap id="userVolist" type="UserVo">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <association property="country" javaType="Country">
+            <result property="countryName" column="c_name"/>
+        </association>
+    </resultMap>
+    <select id="SelectAllUserVo" resultMap="userVolist">
+        select u.username,u.password,c.c_name from user u left join country c on u.id=c.id
+    </select>
 </mapper>
 
 

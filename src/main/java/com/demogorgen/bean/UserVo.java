@@ -8,9 +8,8 @@ package com.demogorgen.bean;
 public class UserVo extends User{
     private Country country;
 
-    public Country getCountry() {
-        return country;
-    }
+
+
 
     public void setCountry(Country country) {
         this.country = country;
@@ -23,5 +22,6 @@ public class UserVo extends User{
                 "} " + super.toString();
     }
 
-
+    public UserVo() {
+    }
 }
