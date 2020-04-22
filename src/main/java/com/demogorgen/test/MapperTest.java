@@ -21,7 +21,7 @@ public class   MapperTest {
         MapperTest mapperTest=new MapperTest();
 //        mapperTest.Test3();
 //        mapperTest.Test4();
-        mapperTest.Test6();
+        mapperTest.Test7();
     }
     public void Test1(){
         //读取配置文件
@@ -116,6 +116,26 @@ public class   MapperTest {
         List<UserVo> userVoList=userMapper.SelectAllUserVo();
         for(UserVo uvo:userVoList){
             System.out.println(uvo);
+        }
+    }
+    public void Test7(){
+        //读取配置文件
+        InputStream in = HelloMybatis.class.getClassLoader().getResourceAsStream("conf/sqlMapConfig.xml");
+        //需要sqlsessionFactoryBulider
+        SqlSessionFactoryBuilder ssfb = new SqlSessionFactoryBuilder();
+        //创建sqlsessionfactory
+        SqlSessionFactory ssf = ssfb.build(in);
+        //生产sqlsession
+        SqlSession session = ssf.openSession();
+        //操作数据库
+        UserMapper userMapper=session.getMapper(UserMapper.class);
+        User user=new User();
+//        user.setId(2);
+        user.setUsername("i");
+//        user.setPassword("2");
+        List<User> userList=userMapper.SelectLike(user);
+        for(User u:userList){
+            System.out.println(u);
         }
     }
 

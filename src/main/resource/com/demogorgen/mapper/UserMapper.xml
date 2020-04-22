@@ -46,6 +46,25 @@
     <select id="SelectAllUserVo" resultMap="userVolist">
         select u.username,u.password,c.c_name from user u left join country c on u.id=c.id
     </select>
+
+    <!--public  List<User> SelectLike();-->
+    <select id="SelectLike" parameterType="User" resultType="User">
+        select *
+        from user
+        <where>
+            <if test="id!=null and id!=''">
+                id=#{id}
+            </if>
+            <if test="username!=null and username!=''">
+                and username like "%"#{username}"%"
+            </if>
+            <if test="password!=null and password!=''">
+                and password like "%"#{password}"%"
+            </if>
+        </where>
+
+
+    </select>
 </mapper>
 
 
