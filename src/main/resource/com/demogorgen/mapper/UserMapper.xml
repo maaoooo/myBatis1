@@ -62,8 +62,30 @@
                 and password like "%"#{password}"%"
             </if>
         </where>
+    </select>
 
+    <!--  public  void UpdateUser();-->
+    <update id="UpdateUser" parameterType="User">
+        update user
+        <set>
+        <if test="username!=null and username!=''">
+        username=#{username},
+        </if>
+        <if test="password!=null and password!=''">
+        password=#{password}
+        </if>
+        where id=#{id}
+        </set>
+    </update>
 
+    <!--  public void SelectUserByIds();-->
+    <select id="SelectUserByIds" parameterType="int[]" resultType="User">
+        select *
+        from user
+        where id in
+        <foreach collection="array" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
     </select>
 </mapper>
 

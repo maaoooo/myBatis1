@@ -21,7 +21,7 @@ public class   MapperTest {
         MapperTest mapperTest=new MapperTest();
 //        mapperTest.Test3();
 //        mapperTest.Test4();
-        mapperTest.Test7();
+        mapperTest.Test9();
     }
     public void Test1(){
         //读取配置文件
@@ -134,6 +134,41 @@ public class   MapperTest {
         user.setUsername("i");
 //        user.setPassword("2");
         List<User> userList=userMapper.SelectLike(user);
+        for(User u:userList){
+            System.out.println(u);
+        }
+    }
+    public void Test8(){
+        //读取配置文件
+        InputStream in = HelloMybatis.class.getClassLoader().getResourceAsStream("conf/sqlMapConfig.xml");
+        //需要sqlsessionFactoryBulider
+        SqlSessionFactoryBuilder ssfb = new SqlSessionFactoryBuilder();
+        //创建sqlsessionfactory
+        SqlSessionFactory ssf = ssfb.build(in);
+        //生产sqlsession
+        SqlSession session = ssf.openSession();
+        //操作数据库
+        UserMapper userMapper=session.getMapper(UserMapper.class);
+        User user=new User();
+        user.setId(1);
+        user.setUsername("先知");
+        user.setPassword("1010101");
+        userMapper.UpdateUser(user);
+        session.commit();
+    }
+    public void Test9(){
+        //读取配置文件
+        InputStream in = HelloMybatis.class.getClassLoader().getResourceAsStream("conf/sqlMapConfig.xml");
+        //需要sqlsessionFactoryBulider
+        SqlSessionFactoryBuilder ssfb = new SqlSessionFactoryBuilder();
+        //创建sqlsessionfactory
+        SqlSessionFactory ssf = ssfb.build(in);
+        //生产sqlsession
+        SqlSession session = ssf.openSession();
+        //操作数据库
+        UserMapper userMapper=session.getMapper(UserMapper.class);
+        int[] ids={1,2,3};
+        List<User> userList=userMapper.SelectUserByIds(ids);
         for(User u:userList){
             System.out.println(u);
         }

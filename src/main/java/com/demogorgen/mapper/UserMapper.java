@@ -27,4 +27,9 @@ public interface UserMapper {
     //查询所有UserVo
     public  List<UserVo> SelectAllUserVo();
     public  List<User> SelectLike(User user);
+
+    public  void UpdateUser(User user);
+
+    public List<User> SelectUserByIds(int[] ids);
+
 }

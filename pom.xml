@@ -35,6 +35,11 @@
             <version>5.4.2</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>cn.ipokerface</groupId>
+            <artifactId>mybatis-generator</artifactId>
+            <version>1.5.0</version>
+        </dependency>
     </dependencies>
 
     <build>
